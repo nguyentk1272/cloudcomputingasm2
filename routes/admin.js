@@ -4,7 +4,7 @@ var name;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('admin', { title: 'Admin Page', name:"trong" });
+  res.render('admin', { title: 'Admin Page', name: 'Trong'});
 });
 
 module.exports = router;
