@@ -27,7 +27,7 @@ router.post('/crud', async (req, res, next) => {
   try {
     session = req.session;
     console.log(req.body);
-    
+    let results = await crud(req.body);
 
     // refresh the page
     let table = await display_products(req.body.shop_id);
