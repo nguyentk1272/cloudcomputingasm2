@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="refresh" content="30">
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= name %></p>
-    <%- select_box -%>
-    <%- table_string %>
+    <p>Welcome <%= name %> </p>
+    <div>
+      <%- select_box_str -%>
+      <%- table_str -%>
+    </div>
+    
+      <script>
+        window.setInterval(() => {
+          window.location.reload();
+        }, 1000000)
+    </script>  
   </body>
+  <a href="http://localhost:3000/logout">Logout</a>
 </html>
+
+

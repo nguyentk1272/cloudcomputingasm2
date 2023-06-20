@@ -6,22 +6,24 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Login</p>
-    <%- message %>
+    <p>Welcome to <%= title %></p>
 
-    <form method="post" action="/login">
-      <p>
-        <label>Username: </label>
-        <input type="text" name="username">
-      </p>
-      <p>
-        <label>Password: </label>
-        <input type="password" name="password">
-      </p>
-      <p>
-        <input type="submit" value="Login">
-      </p>
+    <!-- Login -->
+    <form action="login" method="post">
+      <label for="username">Username</label>
+        <input type="text" 
+               name="username" 
+               placeholder="enter username">
+      </div>
+      <div>
+        <label for="Password">Password</label>
+        <input type="password" 
+               name="password" 
+               placeholder="enter password">
+      </div>
+      
+      <input type="submit" value="Login">
+      <p><%= message %></p>
     </form>
-
   </body>
 </html>
