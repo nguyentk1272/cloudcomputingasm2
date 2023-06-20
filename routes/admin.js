@@ -30,7 +30,7 @@ router.post('/select_box', async (req, res, next) => {
   let table = await display_products(shop_id);
   let box_str = await gen_box();
   res.render('admin', {
-    title: 'Admin',
+    title: 'Admin Page',
     name: username,
     select_box_str: box_str,
     table_str: table,

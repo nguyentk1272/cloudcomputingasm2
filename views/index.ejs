@@ -2,24 +2,43 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <style>
+    body {
+      background-image: url("images/background.jpg");
+      /* Full height */
+      height: 100vh;
 
-    <!-- Navigate Login -->
-    <form action="" method="post">
-      <input type="submit" value="Login">
-    </form>
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+  <body>
+    <div class="mt-72">
+      <h1 class="text-center text-2xl font-bold text-green-600">
+        <%= title %>
+      </h1>
+      <p class="text-blue-600 text-xl italic text-center">
+        Welcome to <%= title %>
+      </p>
+
+      <!-- Navigate Login -->
+      <form action="" method="post" class="flex justify-center">
+        <input
+          type="submit"
+          class="ml-auto mr-auto bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-10 text-center"
+          value="Login"
+        />
+      </form>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-

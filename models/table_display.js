@@ -47,8 +47,7 @@ async function display_products(shop_id) {
         </head>
         <body>
         <h2>Table products</h2>
-        red
-        <table>
+        <table class="table align-middle mb-0 bg-white">
     <tr>`;
     //--- display all header of table
     let num_fields = data.fields.length;
@@ -78,8 +77,11 @@ async function display_products(shop_id) {
         // add buttons if there is not admin role
 
             table_string += `<td>
-                <button type="submit" name='crud' class="edit-button" value='update'>Update</button>
-                <button type="submit" name='crud' class="delete-button" value='delete'>Delete</button>
+            <button type="submit" name='crud'
+            class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" value='update'>Update</button>
+        <button type="submit" name='crud'
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            value='delete'>Delete</button>
             </td>`;
             table_string += `</tr></form>`;
 
@@ -96,7 +98,10 @@ async function display_products(shop_id) {
 
 
         table_string += `<td>
-            <button type="submit" name='crud' value='insert'>Insert</button>
+        <button type="submit"
+        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            name='crud'
+            value='insert'>Insert</button>
         </td>`;
 
     // close form and table

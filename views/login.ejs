@@ -2,28 +2,67 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-
     <!-- Login -->
-    <form action="login" method="post">
-      <label for="username">Username</label>
-        <input type="text"
-               name="username"
-               placeholder="enter username">
-      </div>
-      <div>
-        <label for="Password">Password</label>
-        <input type="password"
-               name="password"
-               placeholder="enter password">
-      </div>
-
-      <input type="submit" value="Login">
-      <p><%= message %></p>
-    </form>
+    <!-- component -->
+    <div
+      class="h-screen bg-gradient-to-br from-blue-600 to-green-700 flex justify-center items-center w-full"
+    >
+      <form action="login" method="post">
+        <div class="bg-white px-10 py-8 rounded-xl w-screen shadow-md max-w-sm">
+          <div class="space-y-4">
+            <h1 class="text-center text-2xl font-semibold text-gray-600">
+              Login
+            </h1>
+            <div>
+              <label
+                for="username"
+                class="block mb-1 text-gray-600 font-semibold"
+                >Username</label
+              >
+              <input
+                type="text"
+                name="username"
+                class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
+              />
+            </div>
+            <div>
+              <label
+                for="password"
+                class="block mb-1 text-gray-600 font-semibold"
+                >Password</label
+              >
+              <input
+                name="password"
+                type="password"
+                class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
+              />
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+              <!-- Checkbox -->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                <label class="form-check-label" for="form1Example3"> Remember me </label>
+              </div>
+            </div>
+        
+            <div class="col">
+              <!-- Simple link -->
+              <a href="#!">Forgot password?</a>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="mt-4 w-full bg-gradient-to-tr from-blue-900 to-indigo-600 text-indigo-100 py-2 rounded-md text-lg tracking-wide"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
