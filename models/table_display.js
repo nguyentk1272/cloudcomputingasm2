@@ -1,10 +1,18 @@
 var pg_conn = require('./pg_config');
+const { values } = require("pg/lib/native/query");
+
 
 async function display_products(shop_id){
-    const products_query =
-    {
-        text: 'SELECT * FROM products WHERE shop_id = $1',
-        values: [shop_id]
+    var products_query;
+
+    if (shop_id == 0) {
+        products_query = `SELECT * FROM products`;
+    }
+    else {
+        products_query = {
+            text: 'SELECT * FROM products WHERE shop_id = $1',
+            values: [shop_id]
+        }
     }
     const data = await pg_conn.query(products_query);
     //init the table_string, with the table tag
@@ -18,8 +26,8 @@ async function display_products(shop_id){
     };
 
         table_string += `</tr>`;
-        //dispay all rows of table
 
+    //dispay all rows of table
     let num_rows = data.rowCount;
     console.log("num rows" + num_rows)
     for(let i=0; i<num_rows; i++){
@@ -31,9 +39,15 @@ async function display_products(shop_id){
         table_string += `</tr>`
     }
 
+    table_string += `<th>
+    <button class="insert-button">Insert</button>
+    <button class="edit-button">Edit</button>
+    <button class="delete-button">Delete</button>
+    </th>`;
+
         table_string += `</table>`;
-        console.log("DATA: -->")
-        console.log(data)
+        // console.log("DATA: -->")
+        // console.log(data)
         return table_string
 }
 module.exports = display_products;

@@ -25,11 +25,12 @@ if (authenticated == true & role == 'shop') {
 //show admin page
 else if (authenticated == true & role == 'admin') {
   let box_string = await gen_box();
+  let table = await display_products(shop_id)
   res.render('admin', {
     title: 'Welcome to Admin page of ATN-SHOP',
     name: username,
     select_box: box_string,
-    // table_string: table,
+    table_string: table
   });
 }
 else {
@@ -37,5 +38,20 @@ else {
                         message: 'Wrong username or password. Please try again!'});
 }
 });
+
+// display for each shop
+router.post('/select_box', async function (req, res, next) {
+  let box_string = await gen_box();
+  let table = await display_products(shop_id);
+
+  res.render('admin', {
+    title: 'ATN shop',
+    message: 'Welcome to ATN shop',
+    select_box: box_string,
+    table_string: table,
+  });
+});
+
+
 
 module.exports = router;
