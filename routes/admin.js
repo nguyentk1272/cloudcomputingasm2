@@ -16,9 +16,9 @@ router.get('/', async (req, res, next) => {
   // select box string
   let select_box = await gen_box();
 
-  res.render('admin', { 
-    title: 'Admin', 
-    name: username, 
+  res.render('admin', {
+    title: 'Admin',
+    name: username,
     table_str: table,
     select_box_str: select_box,});
 });
@@ -30,12 +30,12 @@ router.post('/select_box', async (req, res, next) => {
   let table = await display_products(shop_id);
   let box_str = await gen_box();
   res.render('admin', {
-    title: 'Admin', 
+    title: 'Admin',
     name: username,
     select_box_str: box_str,
     table_str: table,
   })
-}) 
+})
 
 module.exports = router;
 

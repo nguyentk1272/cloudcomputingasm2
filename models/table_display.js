@@ -55,7 +55,6 @@ async function display_products(shop_id) {
     for (let i = 0; i < num_fields; i++) {
         table_string += `<td>${data.fields[i].name}</td>`;
     }
-    
 
 
         table_string += `<th>Actions</th>`;
@@ -84,11 +83,11 @@ async function display_products(shop_id) {
             </td>`;
             table_string += `</tr></form>`;
 
-    
+
     }
 
     // add form submit for insert
-    
+
     table_string += `<form action="/users/crud" method="post"><tr>`
     for (let j = 0; j < num_fields; j++) {
         let field_name = data.fields[j].name;

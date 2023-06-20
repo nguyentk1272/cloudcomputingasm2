@@ -8,7 +8,7 @@ async function gen_box(selectValue=-1){
     <form action="/admin/select_box" method="post">
       <label for="shops">Choose a shop:</label>
         <select name="shops" id="shop_id">
-            <option value=4 ${selectValue==-1?` selected`:''}>All shops</option>`;
+            <option value=4 ${selectValue==-1?` selected`:''}> Shops </option>`;
   let select_items = data.rowCount;
   for (let i = 0; i < select_items; i++) {
     if (data.rows[i].role !== "admin") {

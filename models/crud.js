@@ -17,7 +17,7 @@ async function crud(req_body) {
                 WHERE id = $1;`,
             values: [id, product_name, price, quantity]
         }
-           
+
     }
     // delete case
     else if (req_body.crud == 'delete') { 

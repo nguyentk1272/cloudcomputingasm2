@@ -66,6 +66,4 @@ router.get('/logout', (req, res, next) => {
   res.render('index', {title: 'ATN SHOP'});
 })
 
-
-
 module.exports = router;

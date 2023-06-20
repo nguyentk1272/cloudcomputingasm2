@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
     let username = session.user_id;
     let shop_id = session.shop_id;
     let table = await display_products(shop_id);
-    
+
     res.render('users', {title: 'Welcome user to ATN shop',
                          name: username,
                          table_string: table});
@@ -27,7 +27,7 @@ router.post('/crud', async (req, res, next) => {
   try {
     session = req.session;
     console.log(req.body);
-    let results = await crud(req.body);
+    
 
     // refresh the page
     let table = await display_products(req.body.shop_id);
